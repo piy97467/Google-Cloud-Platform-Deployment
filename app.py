@@ -4,7 +4,9 @@ import pickle
 
 
 app = Flask(__name__)
-model = pickle.load(open('randomForestRegressor.pkl','rb'))
+with open('rf_regression_model','rb') as f:
+    model=pickle.load(f)
+#model = pickle.load(open('randomForestRegressor.pkl','rb'))
 
 
 @app.route('/')
